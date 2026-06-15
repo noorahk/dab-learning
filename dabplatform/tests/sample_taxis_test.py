@@ -4,5 +4,6 @@ from dabplatform import taxis
 
 
 def test_find_all_taxis():
+    print("testing merge flow")
     results = taxis.find_all_taxis()
     assert results.count() > 5

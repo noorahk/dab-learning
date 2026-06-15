@@ -2,8 +2,14 @@
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 bundle:
   name: dabplatform
-  uuid: b7a57892-93d4-4c20-b596-307ccdc9796a
+  uuid: b7a57892-93d4-4c20-b596-307ccdc9796s
 
+workspace:
+  root_path: ~/Workspace/IngestionFramework/${bundle.name}
+
+sync:
+  include:
+    - src/**
 include:
   - resources/*.yml
 
@@ -32,7 +38,7 @@ targets:
     workspace:
       host: https://adb-7405613582925078.18.azuredatabricks.net
       # We explicitly deploy to /Workspace/Users/noorah@godevsuite374.onmicrosoft.com to make sure we only have a single copy.
-      root_path: /Workspace/Users/noorah@godevsuite374.onmicrosoft.com/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Workspace/IngestionFramework/${bundle.name}
     variables:
       catalog: dev
       schema: prod
